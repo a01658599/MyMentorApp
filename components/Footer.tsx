@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
@@ -32,8 +33,8 @@ export default function Footer() {
         <div>
           <h3 className="font-heading text-lg text-white mb-4">Legal</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+            <li><Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+            <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
