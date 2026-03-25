@@ -11,8 +11,8 @@ export default function LandingPage() {
     },
     {
       name: "David Chen",
-      role: "High School Senior",
-      quote: "I found an amazing math tutor who helped me boost my SAT score by 150 points. Highly recommend!",
+      role: "Graduate Student",
+      quote: "I found an amazing statistics tutor who helped me finally understand the complex data models for my thesis. Highly recommend!",
       initials: "DC"
     },
     {

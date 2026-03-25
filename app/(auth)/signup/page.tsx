@@ -1,10 +1,16 @@
+"use client";
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function SignupPage() {
+  const [role, setRole] = useState('student');
+  const targetHref = role === 'student' ? '/dashboard' : '/tutor-dashboard';
+
   return (
     <div className="flex-1 flex items-center justify-center p-6 bg-background">
       <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
-        <h2 className="text-3xl font-heading font-bold text-primary mb-6 text-center">Create an Account</h2>
+        <h2 className="text-3xl font-heading font-bold text-slate-800 mb-6 text-center">Create an Account</h2>
         <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
@@ -22,16 +28,16 @@ export default function SignupPage() {
             <label className="block text-sm font-medium text-slate-700 mb-2">I want to:</label>
             <div className="flex gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="role" value="student" className="accent-primary" defaultChecked />
+                <input type="radio" name="role" value="student" className="accent-primary" checked={role === 'student'} onChange={() => setRole('student')} />
                 <span>Find a Tutor</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="role" value="tutor" className="accent-primary" />
+                <input type="radio" name="role" value="tutor" className="accent-primary" checked={role === 'tutor'} onChange={() => setRole('tutor')} />
                 <span>Become a Tutor</span>
               </label>
             </div>
           </div>
-          <Link href="/dashboard" className="block w-full bg-primary text-white text-center font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors mt-6">
+          <Link href={targetHref} className="block w-full bg-primary text-white text-center font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors mt-6">
             Sign Up
           </Link>
         </form>
